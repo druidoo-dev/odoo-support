@@ -2,7 +2,7 @@
 [![Build Status](https://travis-ci.org/ingadhoc/odoo-support.svg?branch=9.0)](https://travis-ci.org/ingadhoc/odoo-support)
 [![Coverage Status](https://coveralls.io/repos/ingadhoc/odoo-support/badge.png?branch=9.0)](https://coveralls.io/r/ingadhoc/odoo-support?branch=9.0)
 [![Code Climate](https://codeclimate.com/github/ingadhoc/odoo-support/badges/gpa.svg)](https://codeclimate.com/github/ingadhoc/odoo-support)
->>>>>>> origin/9.0
+>>>>>>> origin/10.0
 
 # ADHOC odoo-support
 
@@ -14,7 +14,7 @@ This part will be replaced when running the oca-gen-addons-table script from OCA
 
 Translation Status
 ------------------
-[![Transifex Status](https://www.transifex.com/projects/p/ingadhoc-odoo-support-9-0/chart/image_png)](https://www.transifex.com/projects/p/ingadhoc-odoo-support-9-0)
+[![Transifex Status](https://www.transifex.com/projects/p/ingadhoc-odoo-support-9-0/chart/image_png)](https://www.transifex.com/projects/p/ingadhoc-odoo-support-10-0)
 
 ----
 

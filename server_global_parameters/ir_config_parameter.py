@@ -3,20 +3,31 @@
 # For copyright and license notices, see __openerp__.py file in module root
 # directory
 ##############################################################################
-from openerp import models
+from openerp import api, models
 import openerp.tools as tools
+import logging
+_logger = logging.getLogger(__name__)
 
 
-class ir_config_parameter(models.Model):
+class IrConfigParameter(models.Model):
     _inherit = 'ir.config_parameter'
 
-    def get_param(self, cr, uid, key, default=False, context=None):
-        """
-        """
-        if not self.search(
-                cr, uid, [('key', '=', key)], context=context) and not default:
+    @api.model
+    def get_param(self, key, default=False):
+        res = super(IrConfigParameter, self).get_param(key, default=default)
+        if not res:
             server_value = tools.config.get(key)
             if server_value:
                 return str(server_value)
-        return super(ir_config_parameter, self).get_param(
-            cr, uid, key, default=default, context=context)
+        return res
+
+    @api.model
+    def set_param(self, key, value):
+        server_value = tools.config.get(key)
+        if server_value == value:
+            _logger.info(
+                'Skping setting parameter on db because it has the same value '
+                'as in the config')
+            # set value = False to delete actual key
+            value = False
+        return super(IrConfigParameter, self).set_param(key, value)
